@@ -5,7 +5,9 @@ services:
     image: mysql:8.0
     restart: unless-stopped
     ports:
-      - "3306:3306" 
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: black
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
@@ -16,12 +18,16 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: YoavHomo123
     volumes:
       - grafana_data:/var/lib/grafana
     networks:
       - app-network
     depends_on:
-      - mysql 
+      - mysql
+
 volumes:
   mysql_data:
   grafana_data:
