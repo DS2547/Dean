@@ -7,7 +7,10 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: black
+      MYSQL_ROOT_PASSWORD: blank
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: mypassword
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
