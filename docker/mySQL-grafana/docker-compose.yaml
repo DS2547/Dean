@@ -9,8 +9,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: blank
       MYSQL_DATABASE: mydb
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: mypassword
+      MYSQL_USER: DUser
+      MYSQL_PASSWORD: DPass
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
